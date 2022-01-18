@@ -20,6 +20,11 @@ public class User {
 	public User() {
 	}
 
+	public User(final String usernam, final String password) {
+		this.username = usernam;
+		this.password = password;
+	}
+
 	/**
 	 * @return
 	 */
