@@ -34,7 +34,7 @@ public class LoginService {
 		//}
 		
 
-		return isUserExists ? "Влязохте успешно!" : null;
+		return isUserExists ? "Влязохте успешно!" : "Въвели стегрешни данни!";
 	}
 
 }

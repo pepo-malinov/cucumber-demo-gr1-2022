@@ -16,29 +16,24 @@ public class LoginSteps {
 		model = new LoginScreenModel();
 	}
 
-	@When("^Въведе валидно потребителско име$")
-	public void addUserName() throws Throwable {
-		model.setUsername("Ivan");
+	@When("^Въведе \"([^\"]*)\" потребителско име$")
+	public void addUserName(final String username) {
+		model.setUsername(username);
 	}
 
-	@When("^въведе валидна парола$")
-	public void addPassword() throws Throwable {
-		model.setPassword("pass1234");
+	@When("^въведе парола: \"([^\"]*)\"$")
+	public void addPassword(final String password) {
+		model.setPassword(password);
 	}
 
 	@When("^натисне бутона за вход в системата$")
-	public void clickLoginButton() throws Throwable {
+	public void clickLoginButton() {
 		model.clickLoginButton();
 	}
 
-	@Then("^Вижда съобщение за успех$")
-	public void checkMessage() throws Throwable {
-		assertEquals("Влязохте успешно!", model.getMessage());
-	}
-	
-	@Then("^Вижда съобщение за липса на данни$")
-	public void checkForMissingData() throws Throwable {
-		assertEquals("Въведете име и парола!", model.getMessage());
+	@Then("^Вижда съобщение: \"([^\"]*)\"$")
+	public void checkMessage(final String expectedMessage) {
+		assertEquals(expectedMessage, model.getMessage());
 	}
 
 }
