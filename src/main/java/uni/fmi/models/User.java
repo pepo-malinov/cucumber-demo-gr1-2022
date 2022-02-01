@@ -13,16 +13,23 @@ public class User {
 	private Set<Role> roles;
 	private Set<Post> posts;
 	private Set<Comment> comments;
+	private String email;
 
 	/**
 	 * Default constructor
 	 */
 	public User() {
+		this(null, null, null);
 	}
 
-	public User(final String usernam, final String password) {
-		this.username = usernam;
+	public User(final String username, final String password) {
+		this(username, password, null);
+	}
+
+	public User(String username, String password, String email) {
+		this.username = username;
 		this.password = password;
+		this.email = email;
 	}
 
 	/**
@@ -126,6 +133,20 @@ public class User {
 		if (null != comments) {
 			this.comments = comments;
 		}
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
