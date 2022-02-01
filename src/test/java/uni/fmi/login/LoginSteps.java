@@ -5,15 +5,19 @@ import static org.junit.Assert.assertEquals;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import uni.fmi.login.model.LoginScreenModel;
+import uni.fmi.register.model.HomeScreenModel;
 
 public class LoginSteps {
 
-	private LoginScreenModel model;
+	private HomeScreenModel model;
+	
+	public LoginSteps(final HomeScreenModel homeScreenModel) {
+		model = homeScreenModel;
+	}
 
 	@Given("^Потребителя отваря екрана за вход в системата$")
 	public void openLoginScreen() {
-		model = new LoginScreenModel();
+		//model = new HomeScreenModel();
 	}
 
 	@When("^Въведе \"([^\"]*)\" потребителско име$")
